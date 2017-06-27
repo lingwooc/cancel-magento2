@@ -42,7 +42,7 @@
                                 <span><?php /* @escapeNotVerified */ echo __('View Order') ?></span>
                             </a>
                             <?php if ($_order->getStatusLabel()=='Pending') : ?>
-                                <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action view">
+                                <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action view cancel">
                                     <span><?php /* @escapeNotVerified */ echo __('Cancel Order') ?></span>
                                 </a>
                             <?php endif ?>
@@ -66,3 +66,30 @@
 <?php else: ?>
     <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('You have placed no orders.'); ?></span></div>
 <?php endif ?>
+
+<script type = 'text/javascript'>
+    require([
+    		'jquery',
+    		'Magento_Ui/js/modal/confirm'
+    	],
+    	function ($, confirmation) {
+    	$('.cancel').click(function (event) {
+    		event.preventDefault();
+
+            var url = event.currentTarget.href;
+    		confirmation({
+    			title: 'Cancel order',
+    			content: 'Do you wish to cancel this order?',
+    			actions: {
+    				confirm: function () {
+                        window.location.href = url;
+    				},
+    				cancel: function () {},
+    				always: function () {}
+    			}
+    		});
+    		return false;
+    	});
+    });
+</script>
+
