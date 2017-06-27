@@ -42,7 +42,7 @@
                                 <span><?php /* @escapeNotVerified */ echo __('View Order') ?></span>
                             </a>
                             <?php if ($_order->getStatusLabel()=='Pending') : ?>
-                                <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action view cancel">
+                                <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action cancel">
                                     <span><?php /* @escapeNotVerified */ echo __('Cancel Order') ?></span>
                                 </a>
                             <?php endif ?>
