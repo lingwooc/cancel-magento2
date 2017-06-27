@@ -41,9 +41,11 @@
                             <a href="<?php /* @escapeNotVerified */ echo $block->getViewUrl($_order) ?>" class="action view">
                                 <span><?php /* @escapeNotVerified */ echo __('View Order') ?></span>
                             </a>
-                            <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action view">
-                                <span><?php /* @escapeNotVerified */ echo __('Cancel Order') ?></span>
-                            </a>
+                            <?php if ($_order->getStatusLabel()=='Pending') : ?>
+                                <a href="<?php /* @escapeNotVerified */ echo $block->getCancelUrl($_order) ?>" class="action view">
+                                    <span><?php /* @escapeNotVerified */ echo __('Cancel Order') ?></span>
+                                </a>
+                            <?php endif ?>
                             <?php if ($this->helper('Magento\Sales\Helper\Reorder')->canReorder($_order->getEntityId())) : ?>
                                 <a href="#" data-post='<?php /* @escapeNotVerified */ echo
                                 $this->helper(\Magento\Framework\Data\Helper\PostHelper::class)
