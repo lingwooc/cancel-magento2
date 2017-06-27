@@ -4,7 +4,7 @@
  */
 
 
-namespace Vendor\Module\Controller\Order;
+namespace thousandmonkeys\Cancel\Controller\Order;
 
 use Magento\Sales\Controller\OrderInterface;
 use Magento\Framework\App\Action\Context;
