@@ -1,5 +1,5 @@
 # Cancel-magento2
-Not ready!
+Install to add order cancel links to users customer areas
 
 Credit for the controller goes entirely to Khoa TruongDinh https://magento.stackexchange.com/questions/133003/
 
@@ -8,6 +8,3 @@ Credit for the controller goes entirely to Khoa TruongDinh https://magento.stack
 - php bin/magento setup:upgrade
 - php bin/magento setup:di:compile
 - php bin/magento setup:static-content:deploy
-
-# Usage
-
